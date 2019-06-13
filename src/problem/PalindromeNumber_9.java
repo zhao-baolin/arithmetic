@@ -19,7 +19,7 @@ package problem;
  *
  * 进阶:你能不将整数转为字符串来解决这个问题吗？
  */
-public class PalindromeNumber {
+public class PalindromeNumber_9 {
 
     //简单粗暴
     public static boolean isPalindrome_1(int x) {

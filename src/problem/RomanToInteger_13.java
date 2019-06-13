@@ -44,7 +44,7 @@ import java.util.HashMap;
  * 输出: 1994
  * 解释: M = 1000, CM = 900, XC = 90, IV = 4.
  */
-public class RomanToInteger {
+public class RomanToInteger_13 {
 
     public static int romanToInt(String s) {
         HashMap map = new HashMap();

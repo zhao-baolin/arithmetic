@@ -1,4 +1,4 @@
-package problem;
+package leetcode;
 
 /**
  * 最长公共前缀

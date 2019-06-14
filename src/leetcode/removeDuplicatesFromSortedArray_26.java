@@ -68,7 +68,7 @@ public class removeDuplicatesFromSortedArray_26 {
         int[] in = {0,0,1,1,1,2,2,3,3,4};
         //int[] in = {0,1,3};
         //String[] in = {"b"};
-        int result = removeDuplicates(in);
+        int result = removeDuplicates2(in);
         System.out.println(result);
         System.out.println(Arrays.toString(in));
     }

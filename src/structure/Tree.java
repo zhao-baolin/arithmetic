@@ -1,6 +1,8 @@
 package structure;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -143,7 +145,7 @@ public class Tree {
     }
 
     /**
-     * 二叉树前序遍历
+     * 二叉树前序遍历  递归版
      * @param node   二叉树节点
      */
     public void preTraversal(Node node){
@@ -154,6 +156,33 @@ public class Tree {
         preTraversal(node.left);
         preTraversal(node.right);
     }
+
+
+    /**
+     * 二叉树前序遍历 迭代版
+     * @param root
+     * @return
+     */
+    public static List<Integer> preorderTraversal(Node root) {
+        List<Integer> list = new ArrayList(){};
+        LinkedList<Node> store =  new LinkedList(){};
+        if(null == root){
+            return list;
+        }
+        store.add(root);
+        while(!store.isEmpty()){
+            Node node = store.pollLast();
+            list.add(node.data);
+            if(null != node.left){
+                store.add(node.left);
+            }
+            if(null != node.right){
+                store.add(node.right);
+            }
+        }
+        return list;
+    }
+
 
 
     /**
@@ -210,9 +239,10 @@ public class Tree {
         }
     }
 
+
     public static void main(String[] args) {
         Tree tree = new Tree();
-        tree.insert(10);
+/*        tree.insert(10);
         tree.insert(8);
         tree.insert(15);
         tree.insert(7);
@@ -223,8 +253,13 @@ public class Tree {
         tree.insert(16);
         tree.insert(19);
         tree.insert(1);
-        tree.insert(6);
+        tree.insert(6);*/
 
+tree.insert(3);
+tree.insert(1);
+tree.insert(2);
+List<Integer> list = preorderTraversal(tree.tree);
+        System.out.println(list.toString());
         //tree.delete(6);
         //tree.delete(14);
         //tree.delete(15);
@@ -234,7 +269,7 @@ public class Tree {
         //System.out.println(tree.maxNode().data);
 
         //tree.preTraversal(tree.tree);
-        tree.levelTraversal(tree.tree);
+        //tree.levelTraversal(tree.tree);
     }
 
 }
